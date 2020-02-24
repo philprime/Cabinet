@@ -13,7 +13,7 @@ import CryptoKit
 extension Data {
     
     public var sha1: [UInt8] {
-        if #available(iOS 13.0, OSX 10.15, *) {
+        if #available(iOS 13.0, tvOS 13.0, OSX 10.15, *) {
             return [UInt8](Insecure.SHA1.hash(data: self))
         } else {
             var digest = [UInt8](repeating: 0, count: Int(CC_SHA1_DIGEST_LENGTH))
