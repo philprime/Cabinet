@@ -5,18 +5,19 @@ import PackageDescription
 let package = Package(
     name: "Cabinet",
     products: [
-        .library(
-            name: "Cabinet",
-            targets: ["Cabinet"]),
+        .library(name: "Cabinet", targets: ["Cabinet"]),
     ],
     dependencies: [
+        .package(url: "git@github.com:philprime/Flow.git", .upToNextMajor(from: "0.0.1")),
+        .package(url: "https://github.com/Quick/Quick", .upToNextMajor(from: "2.2.0")),
+        .package(url: "https://github.com/Quick/Nimble",  .upToNextMajor(from: "8.0.7")),
     ],
     targets: [
-        .target(
-            name: "Cabinet",
-            dependencies: []),
-        .testTarget(
-            name: "CabinetTests",
-            dependencies: ["Cabinet"]),
+        .target(name: "Cabinet", dependencies: ["Flow"]),
+        .testTarget(name: "CabinetTests", dependencies: [
+            "Cabinet",
+            "Quick",
+            "Nimble"
+        ]),
     ]
 )
