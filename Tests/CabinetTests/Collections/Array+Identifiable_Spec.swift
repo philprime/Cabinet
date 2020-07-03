@@ -28,7 +28,7 @@ class Array_Identifiable_Spec: QuickSpec {
                             Item(id: "1", value: "Value 1"),
                             Item(id: "2", value: "Value 2"),
                             Item(id: "3", value: "Value 3"),
-                        ].first(where: item)
+                        ].first(byId: item)
                         expect(firstItem?.id) == item.id
                         expect(firstItem?.value) == item.value
                     }
@@ -39,7 +39,7 @@ class Array_Identifiable_Spec: QuickSpec {
                             Item(id: "1", value: "Value 1"),
                             Item(id: "2", value: "Value 2"),
                             Item(id: "3", value: "Value 3"),
-                        ].first(where: item)
+                        ].first(byId: item)
                         expect(firstItem?.id) == item.id
                         expect(firstItem?.value) == "Value 2"
                     }
@@ -50,7 +50,7 @@ class Array_Identifiable_Spec: QuickSpec {
                             Item(id: "1", value: "Value 1"),
                             Item(id: "2", value: "Value 2"),
                             Item(id: "3", value: "Value 3"),
-                        ].first(where: item)
+                        ].first(byId: item)
                         expect(firstItem).to(beNil())
                     }
                 }

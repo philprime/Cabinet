@@ -8,7 +8,7 @@
 @available(OSX 10.15, *)
 public extension Array where Element: Identifiable {
 
-    func first(where other: Element) -> Element? {
+    func first<T>(byId other: T) -> Element? where T: Identifiable, T.ID == Element.ID {
         self.first { element -> Bool in
             element.id == other.id
         }
