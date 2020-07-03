@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "Flow",
-        "repositoryURL": "git@github.com:philprime/Flow.git",
+        "repositoryURL": "https://github.com/philprime/Flow",
         "state": {
           "branch": null,
           "revision": "8e463d4c1b86f9ed70fffe32b6f084b522ef9142",
