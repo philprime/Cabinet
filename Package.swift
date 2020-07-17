@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "Cabinet", targets: ["Cabinet"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/philprime/Flow", .upToNextMajor(from: "0.0.1")),
+        .package(url: "https://github.com/philprime/Flow", .upToNextMajor(from: "1.0.0")),
         .package(url: "https://github.com/Quick/Quick", .upToNextMajor(from: "2.2.0")),
         .package(url: "https://github.com/Quick/Nimble",  .upToNextMajor(from: "8.0.7")),
     ],
