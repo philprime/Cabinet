@@ -6,22 +6,32 @@
 //  Copyright © 2020 Philip Niedertscheider. All rights reserved.
 //
 
+/// Collection of multiple bits
 public class Bits {
-    
+
+    /// :nodoc:
     private let bits: [Bit]
-    
+
+    /// Creates a new instance based on the binary representation of the given variable
+    /// - Parameter byte: Value to represent
     public init(byte: UInt8) {
         self.bits = Bits.from(byte: byte)
     }
-    
+
+    /// Returns the bit at the given position, starting at the least significant bit
     public subscript(_ index: Int) -> Bit {
         return bits[index]
     }
-    
+
+    /// Returns the bit at the given position, starting at the most significant bit
     public subscript(fromMSB index: Int) -> Bit {
         return bits[bits.count - 1 - index]
     }
-    
+
+    /// Creates an array of bits, representing the given value
+    ///
+    /// - Parameter byte: Value to represent
+    /// - Returns: Array of bits
     public static func from(byte: UInt8) -> [Bit] {
         var byte = byte
         var bits = [Bit](repeating: .zero, count: 8)

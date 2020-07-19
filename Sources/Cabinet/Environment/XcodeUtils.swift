@@ -10,6 +10,7 @@ import Darwin
 
 public enum XcodeUtil {
 
+    /// Checks for the PTRACE system call, which is most likely set by Xcode
     public static var isProcessRunFromXcode: Bool {
         var info = kinfo_proc()
         var mib : [Int32] = [CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid()]

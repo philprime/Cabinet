@@ -1,5 +1,6 @@
 extension CustomStringConvertible {
 
+    /// Default implementation creating a description using reflection
     public var description: String {
         return createReflectionString(of: self)
     }
@@ -7,6 +8,7 @@ extension CustomStringConvertible {
 
 extension CustomDebugStringConvertible {
 
+    /// Default implementation creating a description using reflection
     public var debugDescription: String {
         return createReflectionString(of: self)
     }

@@ -7,7 +7,15 @@
 //
 
 public extension UnsignedInteger {
-    
+
+    /// Creates an unsigned integer from the given bytes by shifting them
+    ///
+    /// **Example:**
+    ///
+    ///      let number = UnsignedInteger([0b123, 0b456])
+    ///      number == 0b123456
+    ///
+    /// - Parameter bytes: Array of bytes
     init(_ bytes: [UInt8]) {
         precondition(bytes.count <= MemoryLayout<Self>.size)
         

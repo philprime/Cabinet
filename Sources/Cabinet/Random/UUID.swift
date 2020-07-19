@@ -9,9 +9,11 @@
 import Darwin
 
 public struct UUID {
-    
+
+    /// Universally unique identifier
     public let uuidString: String
-    
+
+    /// Initialises a new UUID string using `C`-level uuid generation functions
     public init() {
         var uu = [UInt8](repeating: 0, count: 16)
         uuid_generate(&uu)
