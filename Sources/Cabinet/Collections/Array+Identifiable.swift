@@ -8,7 +8,6 @@
 @available(OSX 10.15, *)
 public extension Array where Element: Identifiable {
 
-
     /// Finds the first element where the `id` equals the `id` of the given object `other`.
     ///
     /// - Parameter other: Other element which conforms to `Identifiable`

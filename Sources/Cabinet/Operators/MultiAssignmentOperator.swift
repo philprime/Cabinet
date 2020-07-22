@@ -6,10 +6,10 @@
 //  Copyright © 2020 Philip Niedertscheider. All rights reserved.
 //
 
+/// Operator for assigning and returning a value
 infix operator <--
+/// Operator for assigning and returning a value, if it is `nil`
 infix operator <-?-
-
-// swiftlint:disable static_operator
 
 /// Assigns parameter `value` into`target` and returns `value` afterwards to be used again
 /// - Parameters:

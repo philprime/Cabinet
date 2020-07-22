@@ -8,9 +8,10 @@
 
 import Darwin
 
+/// A universally unique value that can be used to identify types, interfaces, and other items.
 public struct UUID {
 
-    /// Universally unique identifier
+    /// Universally unique identifier as string value
     public let uuidString: String
 
     /// Initialises a new UUID string using `C`-level uuid generation functions

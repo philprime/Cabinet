@@ -9,7 +9,7 @@ import Quick
 import Nimble
 @testable import Cabinet
 
-class String_Nil_Spec: QuickSpec {
+class String_NilSpec: QuickSpec {
 
     override func spec() {
         describe("String") {

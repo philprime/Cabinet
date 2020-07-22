@@ -19,11 +19,27 @@ public class Bits {
     }
 
     /// Returns the bit at the given position, starting at the least significant bit
+    ///
+    /// **Example:**
+    ///
+    ///     let byte = Bits(byte: 0b1100)
+    ///     byte[0] == .zero
+    ///     byte[1] == .zero
+    ///     byte[2] == .one
+    ///     byte[3] == .one
     public subscript(_ index: Int) -> Bit {
         return bits[index]
     }
 
     /// Returns the bit at the given position, starting at the most significant bit
+    ///
+    /// **Example:**
+    ///
+    ///     let byte = Bits(byte: 0b1100)
+    ///     byte[0] == .one
+    ///     byte[1] == .one
+    ///     byte[2] == .zero
+    ///     byte[3] == .zero
     public subscript(fromMSB index: Int) -> Bit {
         return bits[bits.count - 1 - index]
     }

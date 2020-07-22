@@ -12,7 +12,7 @@ import CryptoKit
 
 extension Data {
 
-    /// Creates a SHA1 hash from the given data
+    /// Creates a SHA1 hash byte array from the given data
     public var sha1: [UInt8] {
         if #available(iOS 13.0, tvOS 13.0, OSX 10.15, *) {
             return [UInt8](Insecure.SHA1.hash(data: self))

@@ -10,6 +10,6 @@ public extension Array {
 
     /// Returns the element at the given index, or `nil` if the given index is out of bounds.
     subscript(safe idx: Int) -> Element? {
-        return idx < 0 || idx > count ? nil : self[idx]
+        idx < 0 || idx > count ? nil : self[idx]
     }
 }
