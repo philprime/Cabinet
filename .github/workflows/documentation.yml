@@ -3,6 +3,8 @@ name: Documentation
 on:
   release:
     types: [ published ]
+  push:
+    branches: [ main ]
 
 jobs:
   deploy_docs:
