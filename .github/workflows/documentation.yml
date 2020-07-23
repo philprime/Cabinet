@@ -25,12 +25,13 @@ jobs:
     - name: Generate Documentation
       run: |
         bundle exec jazzy --config .jazzy.yml
-    - name: Fix Invalid URLS
+    - name: Fix Invalid URLs
       run: |
         cd docs
         touch .nojekyll
     - name: Commit files
       run: |
+        cd docs
         git init
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
