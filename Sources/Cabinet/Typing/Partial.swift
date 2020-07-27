@@ -6,9 +6,12 @@
 //  Copyright © 2020 Philip Niedertscheider. All rights reserved.
 //
 
+// swiftlint:disable line_length
+
 /// Utility for type-safe partial class fields
 ///
-/// Concept is very similar to the [one](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialt) implemented in the Javascript superset language TypeScript.
+/// Concept is very similar to the [one](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialt)
+/// implemented in the Javascript superset language TypeScript.
 ///
 /// It constructs a type with all properties of `Wrapped` set to optional.
 /// This utility will return a type that represents all subsets of a given type.
@@ -60,12 +63,20 @@ public struct Partial<Wrapped> {
 
     /// Returns the value for the given `key`, but fails if an error is thrown
     public subscript<ValueType>(unsafe key: KeyPath<Wrapped, ValueType>) -> ValueType {
-        try! value(for: key)
+        do {
+            try value(for: key)
+        } catch {
+            fatalError()
+        }
     }
 
     /// Returns the optional value for the given `key`, but fails if an error is thrown
     public subscript<ValueType>(unsafe key: KeyPath<Wrapped, ValueType?>) -> ValueType {
-        try! value(for: key)
+        do {
+            try value(for: key)
+        } catch {
+            fatalError()
+        }
     }
 
     /// Returns or updates the value at a given keypath

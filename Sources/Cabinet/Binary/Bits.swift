@@ -51,9 +51,9 @@ public class Bits {
     public static func from(byte: UInt8) -> [Bit] {
         var byte = byte
         var bits = [Bit](repeating: .zero, count: 8)
-        for i in 0..<8 {
+        for idx in 0..<8 {
             if byte & 0x01 != 0 {
-                bits[i] = .one
+                bits[idx] = .one
             }
             byte >>= 1
         }
