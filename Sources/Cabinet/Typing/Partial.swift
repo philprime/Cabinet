@@ -64,7 +64,7 @@ public struct Partial<Wrapped> {
     /// Returns the value for the given `key`, but fails if an error is thrown
     public subscript<ValueType>(unsafe key: KeyPath<Wrapped, ValueType>) -> ValueType {
         do {
-            try value(for: key)
+            return try value(for: key)
         } catch {
             fatalError()
         }
@@ -73,7 +73,7 @@ public struct Partial<Wrapped> {
     /// Returns the optional value for the given `key`, but fails if an error is thrown
     public subscript<ValueType>(unsafe key: KeyPath<Wrapped, ValueType?>) -> ValueType {
         do {
-            try value(for: key)
+            return try value(for: key)
         } catch {
             fatalError()
         }
