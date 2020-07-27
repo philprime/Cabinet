@@ -6,7 +6,6 @@
 //  Copyright © 2020 Philip Niedertscheider. All rights reserved.
 //
 
-
 /// Represents a binary flag, either `.zero` or `.one`
 public enum Bit: UInt8, CustomStringConvertible {
 

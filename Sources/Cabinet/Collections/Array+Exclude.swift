@@ -13,7 +13,7 @@ public extension Array where Element: Equatable {
     ///
     /// - Parameter other: Array of elements which should be excluded
     /// - Returns: Reduced array without the elements in other
-    func exclude(_ other: Array<Element>) -> Array<Element> {
+    func exclude(_ other: [Element]) -> [Element] {
         self.filter(not(other.contains))
     }
 }

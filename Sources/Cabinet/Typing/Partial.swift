@@ -22,14 +22,14 @@ public struct Partial<Wrapped> {
 
         /// Value set in instance does not conform to the expected type
         case invalidValueType(key: KeyPath<Wrapped, ValueType>, actualValue: Any)
-        
+
     }
 
     /// Holds additional data, which overwrites the actual on access with a given KeyPath
     private var values: [PartialKeyPath<Wrapped>: Any?] = [:]
 
     /// Value to project
-    private var backingValue: Wrapped? = nil
+    private var backingValue: Wrapped?
 
     /// Initialises a new partial instance, projecting on the given value
     ///
@@ -121,7 +121,7 @@ public struct Partial<Wrapped> {
         } else if let value = backingValue?[keyPath: key] {
             return value
         }
-        
+
         throw Error.missingKey(key)
     }
 
@@ -140,7 +140,7 @@ public struct Partial<Wrapped> {
         } else if let value = backingValue?[keyPath: key] {
             return value
         }
-        
+
         throw Error.missingKey(key)
     }
 
@@ -161,7 +161,7 @@ public struct Partial<Wrapped> {
         } else if let value = backingValue?[keyPath: key] {
             return value
         }
-        
+
         throw Error.missingKey(key)
     }
 
@@ -182,7 +182,7 @@ public struct Partial<Wrapped> {
         } else if let value = backingValue?[keyPath: key] {
             return value
         }
-        
+
         throw Error.missingKey(key)
     }
 }

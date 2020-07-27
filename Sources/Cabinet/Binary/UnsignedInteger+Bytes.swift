@@ -18,11 +18,11 @@ public extension UnsignedInteger {
     /// - Parameter bytes: Array of bytes
     init(_ bytes: [UInt8]) {
         precondition(bytes.count <= MemoryLayout<Self>.size)
-        
+
         let value = bytes.reduce(0, { (value, byte) in
             (value << 8) | UInt64(byte)
         })
-        
+
         self.init(value)
     }
 }

@@ -24,5 +24,5 @@ extension Data {
             return digest
         }
     }
-    
+
 }
