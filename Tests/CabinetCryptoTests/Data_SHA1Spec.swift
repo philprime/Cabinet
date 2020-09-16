@@ -1,6 +1,6 @@
 import Quick
 import Nimble
-@testable import Cabinet
+@testable import CabinetCrypto
 import Foundation
 
 class Data_SHA1Spec: QuickSpec {
