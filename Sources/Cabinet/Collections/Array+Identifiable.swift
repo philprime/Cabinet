@@ -5,6 +5,7 @@
 //  Created by Philip Niedertscheider on 01.07.20.
 //
 
+@available(iOS 13, *)
 @available(OSX 10.15, *)
 public extension Array where Element: Identifiable {
 
