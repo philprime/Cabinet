@@ -7,6 +7,7 @@
 
 @available(iOS 13, *)
 @available(OSX 10.15, *)
+@available(tvOS 13, *)
 public extension Array where Element: Identifiable {
 
     /// Finds the first element where the `id` equals the `id` of the given object `other`.
