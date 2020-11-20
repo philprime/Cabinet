@@ -16,6 +16,18 @@ class MultiAssignmentOperatorSpec: QuickSpec {
                     expect(result) === value
                     expect(other) === value
                 }
+
+                it("should cast before assigning") {
+                    class Planet {}
+                    class Earth: Planet {}
+
+                    let planet: Planet = Earth()
+                    var other: Earth?
+                    let result = other <-- planet as? Earth
+                    expect(result) === planet
+                    expect(other) === planet
+                    expect(String(describing: type(of: result))) == "Optional<Earth>"
+                }
             }
 
             describe("nil-assignment operator") {
