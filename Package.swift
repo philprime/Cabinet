@@ -6,7 +6,8 @@ let package = Package(
     name: "Cabinet",
     products: [
         .library(name: "Cabinet", targets: ["Cabinet"]),
-        .library(name: "CabinetCrypto", targets: ["CabinetCrypto"])
+        .library(name: "CabinetCrypto", targets: ["CabinetCrypto"]),
+            .library(name: "CabinetPartialTypes", targets: ["CabinetPartialTypes"])
     ],
     dependencies: [
         .package(url: "https://github.com/philprime/Flow", .upToNextMajor(from: "1.0.0")),
@@ -14,6 +15,7 @@ let package = Package(
         .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "8.0.7"))
     ],
     targets: [
+        .target(name: "CabinetPartialTypes"),
         .target(name: "CabinetCrypto", dependencies: ["Flow"]),
         .testTarget(name: "CabinetCryptoTests", dependencies: [
             "CabinetCrypto",
