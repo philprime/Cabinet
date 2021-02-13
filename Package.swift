@@ -7,7 +7,9 @@ let package = Package(
     products: [
         .library(name: "Cabinet", targets: ["Cabinet"]),
         .library(name: "CabinetCrypto", targets: ["CabinetCrypto"]),
-            .library(name: "CabinetPartialTypes", targets: ["CabinetPartialTypes"])
+        .library(name: "CabinetPartialTypes", targets: ["CabinetPartialTypes"]),
+        .library(name: "CabinetSwiftUI", targets: ["CabinetSwiftUI"]),
+        .library(name: "CabinetCoding", targets: ["CabinetCoding"])
     ],
     dependencies: [
         .package(url: "https://github.com/philprime/Flow", .upToNextMajor(from: "1.0.0")),
@@ -15,14 +17,16 @@ let package = Package(
         .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "8.0.7"))
     ],
     targets: [
+        .target(name: "Cabinet", dependencies: ["Flow"]),
         .target(name: "CabinetPartialTypes"),
         .target(name: "CabinetCrypto", dependencies: ["Flow"]),
+        .target(name: "CabinetSwiftUI"),
         .testTarget(name: "CabinetCryptoTests", dependencies: [
             "CabinetCrypto",
             "Quick",
             "Nimble"
         ]),
-        .target(name: "Cabinet", dependencies: ["Flow"]),
+        .target(name: "CabinetCoding"),
         .testTarget(name: "CabinetTests", dependencies: [
             "Cabinet",
             "Quick",
