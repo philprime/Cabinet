@@ -21,7 +21,7 @@ public struct ArbitaryCodingKey: CodingKey, Equatable {
     }
 
     // MARK: - Equatable
-    
+
     public static func == (lhs: ArbitaryCodingKey, rhs: ArbitaryCodingKey) -> Bool {
         lhs.stringValue == rhs.stringValue && lhs.intValue == rhs.intValue
     }

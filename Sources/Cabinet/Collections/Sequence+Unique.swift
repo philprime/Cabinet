@@ -34,7 +34,8 @@ extension Sequence {
     ///
     /// Duplicate, in this case, is defined as returning `true` from `comparator`.
     ///
-    /// - Parameter comparator: A comparison closure. `comparator` accepts two elements of this sequence as its parameter and returns a truthy boolean if the two elements have the same identifier
+    /// - Parameter comparator: A comparison closure. `comparator` accepts two elements of
+    ///   this sequence as its parameter and returns a truthy boolean if the two elements have the same identifier
     /// - Returns: A sequence containing only elements uniquely identified by the given comparator
     /// - Note: Source: stackoverflow.com/a/46354989/3141234
     public func unique(by comparator: @escaping (Element, Element) throws -> Bool) rethrows -> [Element] {
