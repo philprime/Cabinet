@@ -6,7 +6,7 @@ import AppKit
 #endif
 
 /// Extension for SwiftUI color to wrap common AppKit and UIKit colors
-@available(OSX 10.15, *)
+@available(iOS 13.0, OSX 10.15, *)
 extension Color {
 
     public static var label: Color {
