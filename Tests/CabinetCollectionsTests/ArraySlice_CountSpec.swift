@@ -8,7 +8,7 @@
 
 import Quick
 import Nimble
-@testable import Cabinet
+@testable import CabinetCollections
 
 class ArraySlice_CountSpec: QuickSpec {
 

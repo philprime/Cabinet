@@ -5,7 +5,11 @@ import PackageDescription
 let package = Package(
     name: "Cabinet",
     products: [
-        .library(name: "Cabinet", targets: ["Cabinet"]),
+        .library(name: "Cabinet", targets: [
+            "Cabinet",
+            "CabinetCollections",
+        ]),
+        .library(name: "CabinetCollections", targets: ["CabinetCollections"]),
         .library(name: "CabinetCrypto", targets: ["CabinetCrypto"]),
         .library(name: "CabinetPartialTypes", targets: ["CabinetPartialTypes"]),
         .library(name: "CabinetSwiftUI", targets: ["CabinetSwiftUI"]),
@@ -18,6 +22,12 @@ let package = Package(
     ],
     targets: [
         .target(name: "Cabinet", dependencies: ["Flow"]),
+        .target(name: "CabinetCollections", dependencies: ["Flow"]),
+        .testTarget(name: "CabinetCollectionsTests", dependencies: [
+            "CabinetCollections",
+            "Quick",
+            "Nimble"
+        ]),
         .target(name: "CabinetPartialTypes"),
         .target(name: "CabinetCrypto", dependencies: ["Flow"]),
         .target(name: "CabinetSwiftUI"),

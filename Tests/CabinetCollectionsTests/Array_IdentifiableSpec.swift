@@ -7,7 +7,7 @@
 
 import Quick
 import Nimble
-@testable import Cabinet
+@testable import CabinetCollections
 
 @available(OSX 10.15, *)
 class Array_Identifiable_Spec: QuickSpec {

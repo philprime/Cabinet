@@ -1,13 +1,6 @@
-//
-//  Array_SafeSpec.swift
-//  
-//
-//  Created by Philip Niedertscheider on 22.07.20.
-//
-
 import Quick
 import Nimble
-@testable import Cabinet
+@testable import CabinetCollections
 
 class Array_SafeSpec: QuickSpec {
 

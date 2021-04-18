@@ -1,6 +1,6 @@
 import Quick
 import Nimble
-@testable import Cabinet
+@testable import CabinetCollections
 
 class Dictionary_NilSpec: QuickSpec {
 
