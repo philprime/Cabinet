@@ -1,4 +1,5 @@
 import SwiftUI
+#if canImport(Combine)
 import Combine
 
 /// Combine two boolean bindings with a logic **AND** operator into a single *readonly* boolean binding
@@ -28,3 +29,4 @@ public func || (lhs: Binding<Bool>, rhs: Binding<Bool>) -> Binding<Bool> {
         set: { _ in }
     )
 }
+#endif
