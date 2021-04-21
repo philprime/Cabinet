@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 /// Combine two boolean bindings with a logic **AND** operator into a single *readonly* boolean binding
 ///
