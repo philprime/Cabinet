@@ -16,7 +16,8 @@ let package = Package(
         .library(name: "CabinetCrypto", targets: ["CabinetCrypto"]),
         .library(name: "CabinetPartialTypes", targets: ["CabinetPartialTypes"]),
         .library(name: "CabinetSwiftUI", targets: ["CabinetSwiftUI"]),
-        .library(name: "CabinetCoding", targets: ["CabinetCoding"])
+        .library(name: "CabinetCoding", targets: ["CabinetCoding"]),
+        .library(name: "CabinetPropertyWrappers", targets: ["CabinetPropertyWrappers"])
     ],
     dependencies: [
         .package(url: "https://github.com/philprime/Flow", .upToNextMajor(from: "1.0.0")),
@@ -44,6 +45,12 @@ let package = Package(
             "Cabinet",
             "Quick",
             "Nimble"
-        ])
+        ]),
+        .target(name: "CabinetPropertyWrappers"),
+        .testTarget(name: "CabinetPropertyWrappersTests", dependencies: [
+            "CabinetPropertyWrappers",
+            "Quick",
+            "Nimble"
+        ]),
     ]
 )
