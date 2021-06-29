@@ -3,8 +3,8 @@ import Foundation
 @propertyWrapper public struct UserDefault<Value> {
 
     private let key: String
-    private let defaultValue: Value
-    private let storage: UserDefaults
+    public var defaultValue: Value
+    public var storage: UserDefaults
 
     public init(_ key: String, defaultValue: Value, storage: UserDefaults = .standard) {
         self.key = key
