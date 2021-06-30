@@ -1,3 +1,5 @@
+import Foundation
+
 public struct Identifier<Owner, Value: Hashable & Codable>: Codable, Hashable {
 
     public let value: Value

@@ -17,7 +17,8 @@ let package = Package(
         .library(name: "CabinetPartialTypes", targets: ["CabinetPartialTypes"]),
         .library(name: "CabinetSwiftUI", targets: ["CabinetSwiftUI"]),
         .library(name: "CabinetCoding", targets: ["CabinetCoding"]),
-        .library(name: "CabinetPropertyWrappers", targets: ["CabinetPropertyWrappers"])
+        .library(name: "CabinetPropertyWrappers", targets: ["CabinetPropertyWrappers"]),
+        .library(name: "CabinetFoundation", targets: ["CabinetFoundation"]),
     ],
     dependencies: [
         .package(url: "https://github.com/philprime/Flow", .upToNextMajor(from: "1.0.0")),
@@ -29,6 +30,12 @@ let package = Package(
         .target(name: "CabinetCollections", dependencies: ["Flow"]),
         .testTarget(name: "CabinetCollectionsTests", dependencies: [
             "CabinetCollections",
+            "Quick",
+            "Nimble"
+        ]),
+        .target(name: "CabinetFoundation"),
+        .testTarget(name: "CabinetFoundationTests", dependencies: [
+            "CabinetFoundation",
             "Quick",
             "Nimble"
         ]),

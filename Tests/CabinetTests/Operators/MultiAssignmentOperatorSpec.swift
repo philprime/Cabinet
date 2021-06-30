@@ -42,6 +42,46 @@ class MultiAssignmentOperatorSpec: QuickSpec {
                     expect(result) !== other
                 }
             }
+
+            describe("nil-fallback-assignment operator") {
+                context("target is nil") {
+                    class Universe {}
+
+                    let value = Universe()
+                    var other: Universe? = nil
+
+                    it("should assign new value") {
+                        let originalOther = other
+                        let result = other <-??- value
+                        expect(other) !== originalOther
+                        expect(result) === value
+                    }
+
+                    it("should return new value") {
+                        let result = other <-??- value
+                        expect(result) === value
+                    }
+                }
+
+                context("target is a value") {
+                    class Universe {}
+
+                    let value = Universe()
+                    var other: Universe? = Universe()
+
+                    it("should not assign value") {
+                        let originalOther = other
+                        let result = other <-??- value
+                        expect(other) === originalOther
+                        expect(result) !== value
+                    }
+
+                    it("should return original value") {
+                        let result = other <-??- value
+                        expect(result) === other
+                    }
+                }
+            }
         }
     }
 }

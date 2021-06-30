@@ -1,13 +1,13 @@
 import Quick
 import Nimble
-@testable import Cabinet
+@testable import CabinetFoundation
 
 class UUIDSpec: QuickSpec {
 
     override func spec() {
         describe("UUID") {
             it("be valid UUID V4 string") {
-                let uuid = Cabinet.UUID().uuidString
+                let uuid = CabinetFoundation.UUID().uuidString
                 let comps = uuid.split(separator: "-")
                 expect(comps).to(haveCount(5))
                 expect(comps[0].count) == 8

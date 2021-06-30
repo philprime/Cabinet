@@ -41,7 +41,7 @@ class FileManager_RemoveAllItemsSpec: QuickSpec {
                 context("folder does not exist") {
                     it("should create the folder so it exists afterwards") {
                         let tempURL = URL(fileURLWithPath: NSTemporaryDirectory())
-                            .appendingPathComponent(Cabinet.UUID().uuidString)
+                            .appendingPathComponent(UUID().uuidString)
 
                         let fm = FileManager.default
                         expect(fm.fileExists(atPath: tempURL.path)) == false

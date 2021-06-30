@@ -18,8 +18,8 @@ public struct UUID {
     public init() {
         var buffer = [UInt8](repeating: 0, count: 16)
         uuid_generate(&buffer)
-        var out = [Int8](repeating: 8, count: 36)
+        var out = [Int8](repeating: 8, count: 36 + 1)
         uuid_unparse(&buffer, &out)
-        uuidString = String(bytes: out.map(UInt8.init), encoding: String.Encoding.utf8)!
+        uuidString = String(cString: &out)
     }
 }
