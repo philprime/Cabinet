@@ -1,0 +1,33 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/runner/work/Cabinet/Cabinet/Sources/Cabinet/Strong Typing/Identifier.swift",
+      "line": 3,
+      "symbol": "Identifier",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Cabinet/Cabinet/Sources/Cabinet/Strong Typing/Identifier.swift",
+      "line": 5,
+      "symbol": "Identifier.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Cabinet/Cabinet/Sources/Cabinet/Strong Typing/Identifier.swift",
+      "line": 9,
+      "symbol": "Identifier.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Cabinet/Cabinet/Sources/Cabinet/Strong Typing/Identifier.swift",
+      "line": 25,
+      "symbol": "Identifier.uuid",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/runner/work/Cabinet/Cabinet"
+}
