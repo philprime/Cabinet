@@ -1,11 +1,11 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.4
 
 import PackageDescription
 
 let package = Package(
     name: "Cabinet",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v11), .macOS(.v10_15)
     ],
     products: [
         .library(name: "Cabinet", targets: [
