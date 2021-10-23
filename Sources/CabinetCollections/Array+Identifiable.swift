@@ -5,7 +5,7 @@
 //  Created by Philip Niedertscheider on 01.07.20.
 //
 
-@available(iOS 13, OSX 10.15, tvOS 13, *)
+@available(iOS 13, macOS 10.15, tvOS 13, *)
 public extension Array where Element: Identifiable {
 
     /// Finds the first element where the `id` equals the `id` of the given object `other`.

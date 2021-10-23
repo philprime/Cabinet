@@ -5,6 +5,7 @@ import SwiftUI
 /// Source: https://www.avanderlee.com/swiftui/conditional-view-modifier/
 ///
 ///
+@available(iOS 13.0, macOS 11, *)
 extension View {
 
     /// Applies the given transform if the given condition evaluates to `true`.
