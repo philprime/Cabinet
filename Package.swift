@@ -11,6 +11,12 @@ let package = Package(
         .library(name: "Cabinet", targets: [
             "CabinetCore",
             "CabinetCollections",
+            "CabinetCrypto",
+            "CabinetPartialTypes",
+            "CabinetSwiftUI",
+            "CabinetCoding",
+            "CabinetPropertyWrappers",
+            "CabinetFoundation"
         ]),
         .library(name: "CabinetCollections", targets: ["CabinetCollections"]),
         .library(name: "CabinetCrypto", targets: ["CabinetCrypto"]),
