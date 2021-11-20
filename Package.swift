@@ -28,42 +28,42 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/philprime/Flow", .upToNextMajor(from: "1.0.0")),
-        .package(url: "https://github.com/Quick/Quick", .upToNextMajor(from: "2.2.0")),
-        .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "8.0.7"))
+        //dev .package(url: "https://github.com/Quick/Quick", .upToNextMajor(from: "2.2.0")),
+        //dev .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "8.0.7"))
     ],
     targets: [
         .target(name: "CabinetCore", dependencies: ["Flow"]),
         .target(name: "CabinetCollections", dependencies: ["Flow"]),
-        .testTarget(name: "CabinetCollectionsTests", dependencies: [
-            "CabinetCollections",
-            "Quick",
-            "Nimble"
-        ]),
+        //dev .testTarget(name: "CabinetCollectionsTests", dependencies: [
+        //dev     "CabinetCollections",
+        //dev     "Quick",
+        //dev     "Nimble"
+        //dev ]),
         .target(name: "CabinetFoundation"),
-        .testTarget(name: "CabinetFoundationTests", dependencies: [
-            "CabinetFoundation",
-            "Quick",
-            "Nimble"
-        ]),
+        //dev .testTarget(name: "CabinetFoundationTests", dependencies: [
+        //dev     "CabinetFoundation",
+        //dev     "Quick",
+        //dev     "Nimble"
+        //dev ]),
         .target(name: "CabinetPartialTypes"),
         .target(name: "CabinetCrypto", dependencies: ["Flow"]),
         .target(name: "CabinetSwiftUI"),
-        .testTarget(name: "CabinetCryptoTests", dependencies: [
-            "CabinetCrypto",
-            "Quick",
-            "Nimble"
-        ]),
+        //dev .testTarget(name: "CabinetCryptoTests", dependencies: [
+        //dev     "CabinetCrypto",
+        //dev     "Quick",
+        //dev     "Nimble"
+        //dev ]),
         .target(name: "CabinetCoding"),
-        .testTarget(name: "CabinetTests", dependencies: [
-            "Cabinet",
-            "Quick",
-            "Nimble"
-        ]),
+        //dev .testTarget(name: "CabinetTests", dependencies: [
+        //dev     "Cabinet",
+        //dev     "Quick",
+        //dev     "Nimble"
+        //dev ]),
         .target(name: "CabinetPropertyWrappers"),
-        .testTarget(name: "CabinetPropertyWrappersTests", dependencies: [
-            "CabinetPropertyWrappers",
-            "Quick",
-            "Nimble"
-        ]),
+        //dev .testTarget(name: "CabinetPropertyWrappersTests", dependencies: [
+        //dev     "CabinetPropertyWrappers",
+        //dev     "Quick",
+        //dev     "Nimble"
+        //dev ]),
     ]
 )

@@ -12,6 +12,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Enable development dependencies
+      run: |
+        sed -i "s/\/\/dev//g" Package.swift
     - name: Build
       run: swift build
     - name: Run tests
