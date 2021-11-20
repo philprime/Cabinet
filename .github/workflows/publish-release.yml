@@ -20,3 +20,19 @@ jobs:
           files: |
             Cabinet.sha256
             Cabinet.zip
+            CabinetCore.sha256
+            CabinetCore.zip
+            CabinetCoding.sha256
+            CabinetCoding.zip
+            CabinetCollections.sha256
+            CabinetCollections.zip
+            CabinetCrypto.sha256
+            CabinetCrypto.zip
+            CabinetFoundation.sha256
+            CabinetFoundation.zip
+            CabinetPartialTypes.sha256
+            CabinetPartialTypes.zip
+            CabinetPropertyWrappers.sha256
+            CabinetPropertyWrappers.zip
+            CabinetSwiftUI.sha256
+            CabinetSwiftUI.zip
