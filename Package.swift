@@ -9,7 +9,7 @@ let package = Package(
     ],
     products: [
         .library(name: "Cabinet", targets: [
-            "Cabinet",
+            "CabinetCore",
             "CabinetCollections",
         ]),
         .library(name: "CabinetCollections", targets: ["CabinetCollections"]),
@@ -26,7 +26,7 @@ let package = Package(
         .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "8.0.7"))
     ],
     targets: [
-        .target(name: "Cabinet", dependencies: ["Flow"]),
+        .target(name: "CabinetCore", dependencies: ["Flow"]),
         .target(name: "CabinetCollections", dependencies: ["Flow"]),
         .testTarget(name: "CabinetCollectionsTests", dependencies: [
             "CabinetCollections",
