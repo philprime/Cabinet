@@ -7,7 +7,7 @@
 
 import Quick
 import Nimble
-@testable import Cabinet
+@testable import CabinetCore
 
 class String_NilSpec: QuickSpec {
 

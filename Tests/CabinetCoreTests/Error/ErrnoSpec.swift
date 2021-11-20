@@ -1,6 +1,6 @@
 import Quick
 import Nimble
-@testable import Cabinet
+@testable import CabinetCore
 import Darwin
 
 class ErrnoSpec: QuickSpec {

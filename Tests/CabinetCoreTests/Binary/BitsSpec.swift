@@ -1,6 +1,6 @@
 import Quick
 import Nimble
-@testable import Cabinet
+@testable import CabinetCore
 
 class BitsSpec: QuickSpec {
 
