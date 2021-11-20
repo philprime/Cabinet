@@ -33,6 +33,11 @@ let package = Package(
     ],
     targets: [
         .target(name: "CabinetCore", dependencies: ["Flow"]),
+        //dev .testTarget(name: "CabinetCoreTests", dependencies: [
+        //dev     "CabinetCore",
+        //dev     "Quick",
+        //dev     "Nimble"
+        //dev ]),
         .target(name: "CabinetCollections", dependencies: ["Flow"]),
         //dev .testTarget(name: "CabinetCollectionsTests", dependencies: [
         //dev     "CabinetCollections",
@@ -54,11 +59,6 @@ let package = Package(
         //dev     "Nimble"
         //dev ]),
         .target(name: "CabinetCoding"),
-        //dev .testTarget(name: "CabinetTests", dependencies: [
-        //dev     "Cabinet",
-        //dev     "Quick",
-        //dev     "Nimble"
-        //dev ]),
         .target(name: "CabinetPropertyWrappers"),
         //dev .testTarget(name: "CabinetPropertyWrappersTests", dependencies: [
         //dev     "CabinetPropertyWrappers",
