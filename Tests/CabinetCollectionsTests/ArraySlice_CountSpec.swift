@@ -1,6 +1,6 @@
 //
 //  ArraySlice_CountSpec.swift
-//  CabinetTests
+//  CabinetCollectionsTests
 //
 //  Created by Philip Niedertscheider on 25.09.20.
 //  Copyright © 2020 Philip Niedertscheider. All rights reserved.

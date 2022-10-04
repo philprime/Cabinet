@@ -16,9 +16,11 @@ class UnsignedInteger_BytesSpec: QuickSpec {
                 }
 
                 it("should be fail with too many bits") {
+                    #if arch(x86_64)
                     expect {
                         _ = UInt16([0b1111, 0b1100_1100, 0b1010_1010])
                     }.to(throwAssertion())
+                    #endif
                 }
             }
         }

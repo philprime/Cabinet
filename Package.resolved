@@ -1,16 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Flow",
-        "repositoryURL": "https://github.com/philprime/Flow",
-        "state": {
-          "branch": null,
-          "revision": "4cc1ec7b6f677646128635344c914828a9819aa6",
-          "version": "1.0.0"
-        }
+  "pins" : [
+    {
+      "identity" : "flow",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/philprime/Flow",
+      "state" : {
+        "revision" : "4cc1ec7b6f677646128635344c914828a9819aa6",
+        "version" : "1.0.0"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }

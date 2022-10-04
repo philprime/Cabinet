@@ -1,6 +1,6 @@
 //
 //  Array+Identifiable_Spec.swift
-//  CabinetTests
+//  CabinetCoreTests
 //
 //  Created by Philip Niedertscheider on 01.07.20.
 //

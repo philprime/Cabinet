@@ -2,8 +2,8 @@ name: Publish Release
 
 on:
   push:
-    tags:        
-      - '*'
+    tags:
+      - "*"
 
 jobs:
   create_release:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Create XCFramework
-        uses: philprime/swift-create-xcframework@main
+        uses: unsignedapps/swift-create-xcframework@v2.3.0
       - name: Create GitHub Release
         uses: marvinpinto/action-automatic-releases@latest
         with:
