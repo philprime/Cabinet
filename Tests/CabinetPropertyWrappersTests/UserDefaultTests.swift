@@ -43,4 +43,19 @@ class UserDefaultTests: XCTestCase {
         XCTAssertNil(object.value)
         XCTAssertNil(TestObject.storage.string(forKey: key))
     }
+
+    func testType_valueIsDouble_shouldOnlyBeReadableAsDouble() {
+        class TestObject {
+            static let storage = UserDefaults(suiteName: "testType_valueIsDouble_shouldOnlyBeReadableAsDouble")!
+            @UserDefault("testType_valueIsDouble_shouldOnlyBeReadableAsDouble", defaultValue: nil, storage: TestObject.storage) var value: Double?
+            @UserDefault("testType_valueIsDouble_shouldOnlyBeReadableAsDouble", defaultValue: nil, storage: TestObject.storage) var wrongTypeValue: String?
+        }
+        let key = "testType_valueIsDouble_shouldOnlyBeReadableAsDouble"
+        let object = TestObject()
+        object.value = 123.456
+        XCTAssertEqual(object.value, 123.456)
+        XCTAssertEqual(object.wrongTypeValue, nil)
+        XCTAssertEqual(TestObject.storage.double(forKey: key), 123.456)
+        XCTAssertEqual(TestObject.storage.string(forKey: key), "123.456")
+    }
 }

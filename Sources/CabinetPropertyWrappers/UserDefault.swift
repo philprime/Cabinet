@@ -20,12 +20,16 @@ import Foundation
 
     public var wrappedValue: Value {
         get {
-            if type(of: Value.self) == Bool.self {
+            if type(of: Value.self) == Bool.Type.self || type(of: Value.self) == Optional<Bool>.Type.self {
                 return storage.bool(forKey: key) as? Value ?? defaultValue
-            } else if type(of: Value.self) == Data.self {
+            } else if type(of: Value.self) == Data.Type.self || type(of: Value.self) == Optional<Data>.Type.self {
                 return storage.data(forKey: key) as? Value ?? defaultValue
-            } else if type(of: Value.self) == Int.self {
+            } else if type(of: Value.self) == Int.Type.self || type(of: Value.self) == Optional<Int>.Type.self {
                 return storage.integer(forKey: key) as? Value ?? defaultValue
+            } else if type(of: Value.self) == Double.Type.self || type(of: Value.self) == Optional<Double>.Type.self {
+                return storage.double(forKey: key) as? Value ?? defaultValue
+            } else if type(of: Value.self) == Float.Type.self || type(of: Value.self) == Optional<Float>.Type.self {
+                return storage.float(forKey: key) as? Value ?? defaultValue
             }
             return storage.object(forKey: key) as? Value ?? defaultValue
         }
