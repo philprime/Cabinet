@@ -1,87 +1,80 @@
-import Quick
-import Nimble
+import XCTest
 @testable import CabinetCore
 
-class MultiAssignmentOperatorSpec: QuickSpec {
+class MultiAssignmentOperatorSpec: XCTestCase {
 
-    override func spec() {
-        describe("MultiAssignmentOperator") {
-            describe("assignment operator") {
-                it("should assign and return identical value") {
-                    class Universe {}
+    func testAssignmentOperator_identicalType_shouldAssignAndReturn() {
+        class Universe {}
 
-                    let value = Universe()
-                    var other: Universe?
-                    let result = other <-- value
-                    expect(result) === value
-                    expect(other) === value
-                }
+        let value = Universe()
+        var other: Universe?
+        let result = other <-- value
+        XCTAssertIdentical(result, value)
+        XCTAssertIdentical(other, value)
+    }
 
-                it("should cast before assigning") {
-                    class Planet {}
-                    class Earth: Planet {}
+    func testAssignmentOperator_inheritedType_shouldCastBeforeAssign() {
+        class Planet {}
+        class Earth: Planet {}
 
-                    let planet: Planet = Earth()
-                    var other: Earth?
-                    let result = other <-- planet as? Earth
-                    expect(result) === planet
-                    expect(other) === planet
-                    expect(String(describing: type(of: result))) == "Optional<Earth>"
-                }
-            }
+        let planet: Planet = Earth()
+        var other: Earth?
+        let result = other <-- planet as? Earth
+        XCTAssertIdentical(result, planet)
+        XCTAssertIdentical(other, planet)
+        XCTAssertEqual(String(describing: type(of: result)), "Optional<Earth>")
+    }
 
-            describe("nil-assignment operator") {
-                it("should assign if the target is nil") {
-                    class Universe {}
+    func testNilAssignmentOperator_targetIsNil_shouldAssignValue() {
+        class Universe {}
 
-                    let value = Universe()
-                    var other: Universe? = Universe()
-                    let result = other <-?- value
-                    expect(value) !== other
-                    expect(result) === value
-                    expect(result) !== other
-                }
-            }
+        let value = Universe()
+        var other: Universe? = Universe()
+        let result = other <-?- value
+        XCTAssertNotIdentical(value, other)
+        XCTAssertIdentical(result, value)
+        XCTAssertNotIdentical(result, other)
+    }
 
-            describe("nil-fallback-assignment operator") {
-                context("target is nil") {
-                    class Universe {}
+    func testNilFallbackAssignmentOperator_targetIsNil_shouldAssignNewValue() {
+        class Universe {}
 
-                    let value = Universe()
-                    var other: Universe? = nil
+        let value = Universe()
+        var other: Universe? = nil
+        let originalOther = other
+        let result = other <-??- value
+        XCTAssertNotIdentical(other, originalOther)
+        XCTAssertIdentical(result, value)
+    }
 
-                    it("should assign new value") {
-                        let originalOther = other
-                        let result = other <-??- value
-                        expect(other) !== originalOther
-                        expect(result) === value
-                    }
+    func testNilFallbackAssignmentOperator_targetIsNil_shouldReturnNewValue() {
+        class Universe {}
 
-                    it("should return new value") {
-                        let result = other <-??- value
-                        expect(result) === value
-                    }
-                }
+        let value = Universe()
+        var other: Universe? = nil
+        let result = other <-??- value
+        XCTAssertIdentical(result, value)
+    }
 
-                context("target is a value") {
-                    class Universe {}
+    func testNilFallbackAssignmentOperator_targetHasValue_shouldNotAssignValue() {
+        class Universe {}
 
-                    let value = Universe()
-                    var other: Universe? = Universe()
+        let value = Universe()
+        var other: Universe? = Universe()
 
-                    it("should not assign value") {
-                        let originalOther = other
-                        let result = other <-??- value
-                        expect(other) === originalOther
-                        expect(result) !== value
-                    }
+        let originalOther = other
+        let result = other <-??- value
+        XCTAssertIdentical(other, originalOther)
+        XCTAssertNotIdentical(result, value)
+    }
 
-                    it("should return original value") {
-                        let result = other <-??- value
-                        expect(result) === other
-                    }
-                }
-            }
-        }
+    func testNilFallbackAssignmentOperator_targetHasValue_shouldReturnOriginalValue() {
+        class Universe {}
+
+        let value = Universe()
+        var other: Universe? = Universe()
+
+        let result = other <-??- value
+        XCTAssertIdentical(result, other)
     }
 }

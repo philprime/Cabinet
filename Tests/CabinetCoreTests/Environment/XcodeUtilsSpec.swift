@@ -1,14 +1,9 @@
-import Quick
-import Nimble
+import XCTest
 @testable import CabinetCore
 
-class XcodeUtilsSpec: QuickSpec {
+class XcodeUtilsSpec: XCTestCase {
 
-    override func spec() {
-        describe("XcodeUtils") {
-            it("is hard to test PTRACE") {
-                expect(XcodeUtil.isProcessRunFromXcode || !XcodeUtil.isProcessRunFromXcode).to(beTrue())
-            }
-        }
+    func testProcessRunFromXcode_isHardToTestWithPTRACE() {
+        XCTAssertTrue(XcodeUtil.isProcessRunFromXcode || !XcodeUtil.isProcessRunFromXcode)
     }
 }

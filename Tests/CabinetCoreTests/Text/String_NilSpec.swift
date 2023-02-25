@@ -5,24 +5,16 @@
 //  Created by Philip Niedertscheider on 01.07.20.
 //
 
-import Quick
-import Nimble
+import XCTest
 @testable import CabinetCore
 
-class String_NilSpec: QuickSpec {
+class String_NilSpec: XCTestCase {
 
-    override func spec() {
-        describe("String") {
-            describe("nil if empty") {
+    func testNilIfEmpty_stringIsEmpty_shouldReturnNil() {
+        XCTAssertNil("".nilIfEmpty)
+    }
 
-                it("should return nil if string is empty") {
-                    expect("".nilIfEmpty).to(beNil())
-                }
-
-                it("should return string if string is not empty") {
-                    expect("ABC".nilIfEmpty) == "ABC"
-                }
-            }
-        }
+    func testNilIfEmpty_stringIsNotEmpty_shouldReturnString() {
+        XCTAssertEqual("ABC".nilIfEmpty, "ABC")
     }
 }

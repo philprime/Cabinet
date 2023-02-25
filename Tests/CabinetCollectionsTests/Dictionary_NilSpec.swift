@@ -1,18 +1,9 @@
-import Quick
-import Nimble
+import XCTest
 @testable import CabinetCollections
 
-class Dictionary_NilSpec: QuickSpec {
+class Dictionary_NilSpec: XCTestCase {
 
-    override func spec() {
-        describe("Dictionary") {
-            describe("trimming nil values") {
-                context("string key and string value") {
-                    it("should remove any nil values") {
-                        expect(["A": "a", "B": nil].trimmingNullValues) == ["A": "a"]
-                    }
-                }
-            }
-        }
+    func testTrimmingNilValues_stringKeyAndStringValue_shouldRemoveAnyNilValues() {
+        XCTAssertEqual(["A": "a", "B": nil].trimmingNullValues, ["A": "a"])
     }
 }

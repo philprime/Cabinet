@@ -1,24 +1,17 @@
-import Quick
-import Nimble
+import XCTest
 @testable import CabinetCollections
 
-class Array_Exclude_Spec: QuickSpec {
+class Array_Exclude_Spec: XCTestCase {
 
-    override func spec() {
-        describe("Array") {
-            describe("exclude") {
-                it("should exclude all elements of other array") {
-                    expect([1, 2, 3].exclude([1, 2, 3])) == []
-                }
+    func testExclude_equalArrays_shouldExcludeAllElementsOfOtherArray() {
+        XCTAssertEqual([1, 2, 3].exclude([1, 2, 3]), [])
+    }
 
-                it("should not exclude elements which are not in other array") {
-                    expect([1, 2, 3].exclude([3, 4, 5])) == [1, 2]
-                }
+    func testExclude_differentArrays_shouldNotExcludeElementsNotInOtherArray() {
+        XCTAssertEqual([1, 2, 3].exclude([3, 4, 5]), [1, 2])
+    }
 
-                it("should not ignore empty other array") {
-                    expect([1, 2, 3].exclude([])) == [1, 2, 3]
-                }
-            }
-        }
+    func testExclude_otherArrayEmpty_shouldIgnoreArray() {
+        XCTAssertEqual([1, 2, 3].exclude([]), [1, 2, 3])
     }
 }

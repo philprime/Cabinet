@@ -1,42 +1,30 @@
-import Quick
-import Nimble
+import XCTest
 @testable import CabinetCollections
 
-class Array_SafeSpec: QuickSpec {
+class Array_SafeSpec: XCTestCase {
 
-    override func spec() {
-        describe("Array") {
-            describe("Safe") {
-                context("non-empty array") {
-                    let values = [
-                        1,
-                        2,
-                        3
-                    ]
+    let values = [
+        1,
+        2,
+        3
+    ]
+    let emptyValues = Array<String>()
 
-                    it("should return nil if index is below zero") {
-                        expect(values[safe: -1]).to(beNil())
-                    }
+    func testSafeSubscript_nonEmptyArrayWithIndexBelowZero_shouldReturnNil() {
+        XCTAssertNil(values[safe: -1])
+    }
 
-                    it("should return nil if index out of bounds") {
-                        expect(values[safe: 4]).to(beNil())
-                    }
+    func testSafeSubscript_nonEmptyArrayWithIndexOutOfBounds_shouldReturnNil() {
+        XCTAssertNil(values[safe: 4])
+    }
 
-                    it("should return value if valid index") {
-                        expect(values[safe: 0]) == 1
-                        expect(values[safe: 1]) == 2
-                        expect(values[safe: 2]) == 3
-                    }
-                }
+    func testSafeSubscript_nonEmptyArrayWithIndexInBounds_shouldReturnValue() {
+        XCTAssertEqual(values[safe: 0], 1)
+        XCTAssertEqual(values[safe: 1], 2)
+        XCTAssertEqual(values[safe: 2], 3)
+    }
 
-                context("empty array") {
-                    let values: [Int] = []
-
-                    it("should return nil") {
-                        expect(values[safe: 0]).to(beNil())
-                    }
-                }
-            }
-        }
+    func testSafeSubscript_emptyArray_shouldReturnNil() {
+        XCTAssertNil(emptyValues[safe: 0])
     }
 }

@@ -1,49 +1,39 @@
-import Quick
-import Nimble
+import XCTest
 @testable import CabinetCore
 
-class CustomStringConvertible_AutoDescribingSpec: QuickSpec {
+class CustomStringConvertible_AutoDescribingSpec: XCTestCase {
 
-    override func spec() {
-        describe("CustomStringConvertible") {
-            describe("AutoDescribing") {
-                class Question: CustomStringConvertible {
-                    let number: Int
-                    let text: String
+    func testCustomStringConvertible_shouldContainAllFields() {
+        class Question: CustomStringConvertible {
+            let number: Int
+            let text: String
 
-                    init(number: Int, text: String) {
-                        self.number = number
-                        self.text = text
-                    }
-                }
-
-                let question = Question(number: 42, text: "is the answer")
-
-                it("should contain all fields") {
-                    expect(question.description.hasPrefix("Question<")) == true
-                    expect(question.description.hasSuffix(">(number: 42, text: is the answer)")) == true
-                }
+            init(number: Int, text: String) {
+                self.number = number
+                self.text = text
             }
         }
-        describe("CustomDebugStringConvertible") {
-            describe("AutoDescribing") {
-                class Question: CustomStringConvertible {
-                    let number: Int
-                    let text: String
 
-                    init(number: Int, text: String) {
-                        self.number = number
-                        self.text = text
-                    }
-                }
+        let question = Question(number: 42, text: "is the answer")
 
-                let question = Question(number: 42, text: "is the answer")
+        XCTAssertTrue(question.description.hasPrefix("Question<"))
+        XCTAssertTrue(question.description.hasSuffix(">(number: 42, text: is the answer)"))
+    }
 
-                it("should contain all fields") {
-                    expect(question.description.hasPrefix("Question<")) == true
-                    expect(question.description.hasSuffix(">(number: 42, text: is the answer)")) == true
-                }
+    func testCustomDebugStringConvertible_shouldContainAllFields() {
+        class Question: CustomStringConvertible {
+            let number: Int
+            let text: String
+
+            init(number: Int, text: String) {
+                self.number = number
+                self.text = text
             }
         }
+
+        let question = Question(number: 42, text: "is the answer")
+
+        XCTAssertTrue(question.description.hasPrefix("Question<"))
+        XCTAssertTrue(question.description.hasSuffix(">(number: 42, text: is the answer)"))
     }
 }
