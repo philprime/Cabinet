@@ -58,4 +58,24 @@ class UserDefaultTests: XCTestCase {
         XCTAssertEqual(TestObject.storage.double(forKey: key), 123.456)
         XCTAssertEqual(TestObject.storage.string(forKey: key), "123.456")
     }
+
+    func testType_valueIsOptionalBoolWithoutDefault_shouldReturnNil() {
+        class TestObject {
+            static let storage = UserDefaults(suiteName: "testType_valueIsOptionalBool_shouldReturnDefaultValue")!
+            @UserDefault("testType_valueIsOptionalBool_shouldReturnDefaultValue", defaultValue: nil, storage: TestObject.storage) var value: Bool?
+        }
+        let key = "testType_valueIsOptionalBool_shouldReturnDefaultValue"
+        let object = TestObject()
+        XCTAssertNil(object.value)
+        XCTAssertNil(TestObject.storage.object(forKey: key))
+        object.value = true
+        XCTAssertEqual(object.value, true)
+        XCTAssertEqual(TestObject.storage.object(forKey: key) as? Bool, true)
+        object.value = false
+        XCTAssertEqual(object.value, false)
+        XCTAssertEqual(TestObject.storage.object(forKey: key) as? Bool, false)
+        object.value = nil
+        XCTAssertNil(object.value)
+        XCTAssertNil(TestObject.storage.object(forKey: key))
+    }
 }
