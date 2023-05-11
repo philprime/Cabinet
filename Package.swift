@@ -27,7 +27,8 @@ let package = Package(
         .library(name: "CabinetFoundation", targets: ["CabinetFoundation"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/philprime/Flow", .upToNextMajor(from: "1.0.0"))
+        .package(url: "https://github.com/philprime/Flow", .upToNextMajor(from: "1.0.0")),
+        //dev .package(url: "https://github.com/nalexn/ViewInspector", .upToNextMajor(from: "0.9.6"))
     ],
     targets: [
         .target(name: "CabinetCore", dependencies: ["Flow"]),
@@ -44,7 +45,6 @@ let package = Package(
         //dev ]),
         .target(name: "CabinetPartialTypes"),
         .target(name: "CabinetCrypto", dependencies: ["Flow"]),
-        .target(name: "CabinetSwiftUI"),
         //dev .testTarget(name: "CabinetCryptoTests", dependencies: [
         //dev     "CabinetCrypto",
         //dev ]),
@@ -52,6 +52,11 @@ let package = Package(
         .target(name: "CabinetPropertyWrappers"),
         //dev .testTarget(name: "CabinetPropertyWrappersTests", dependencies: [
         //dev     "CabinetPropertyWrappers",
+        //dev ]),
+        .target(name: "CabinetSwiftUI"),
+        //dev .testTarget(name: "CabinetSwiftUITests", dependencies: [
+        //dev     "CabinetSwiftUI",
+        //dev     "ViewInspector"
         //dev ]),
     ]
 )
