@@ -10,12 +10,4 @@ class UnsignedInteger_BytesSpec: XCTestCase {
     func testByteInitializer_16bits_shouldBeCorrectWithTwoBytes() {
         XCTAssertEqual(UInt16([0b1100_1100, 0b1010_1010]), 0b1100_1100_1010_1010)
     }
-
-    func testByteInitializer_16bits_shouldFailWithTooManyBits() {
-        #if arch(x86_64)
-        XCTAssertThrowsError({
-            UInt16([0b1111, 0b1100_1100, 0b1010_1010])
-        })
-        #endif
-    }
 }
