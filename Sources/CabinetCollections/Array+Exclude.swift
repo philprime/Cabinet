@@ -1,6 +1,6 @@
 //
 //  Array+Exclude.swift
-//  
+//
 //
 //  Created by Philip Niedertscheider on 01.07.20.
 //

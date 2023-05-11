@@ -39,7 +39,7 @@ extension View {
     ///   - condition: The condition to evaluate.
     ///   - transform: The transform to apply to the source `View`.
     /// - Returns: Either the original `View` or the modified `View` if the condition is `true`.
-    @ViewBuilder public func `if`<Content: View, Item>(item: Optional<Item>, @ViewBuilder transform: (Self, Item) -> Content) -> some View {
+    @ViewBuilder public func `if`<Content: View, Item>(item: Item?, @ViewBuilder transform: (Self, Item) -> Content) -> some View {
         if let item = item {
             transform(self, item)
         } else {
@@ -148,7 +148,7 @@ extension View {
             self
         }
     }
-    
+
     /// Applies the given transform if all of the given values are not nil
     ///
     /// - Parameters:
