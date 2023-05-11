@@ -6,7 +6,7 @@ infix operator +~
 /// - Parameters:
 ///   - lhs: Base dictionary
 ///   - rhs: Other dictionary which should be merged with the base one.
-public func +~<K, V>(lhs: inout [K: V], rhs: [K: V]) {
+public func +~ <K, V>(lhs: inout [K: V], rhs: [K: V]) {
     lhs = lhs.combine(rhs)
 }
 

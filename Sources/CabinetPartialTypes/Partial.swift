@@ -197,3 +197,5 @@ public struct Partial<Wrapped> {
         throw Error.missingKey(key)
     }
 }
+
+// swiftlint:enable line_length

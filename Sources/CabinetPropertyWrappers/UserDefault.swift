@@ -12,7 +12,10 @@ import Foundation
         self.storage = storage
     }
 
-    public init<Key: RawRepresentable>(_ key: Key, defaultValue: Value, storage: UserDefaults = .standard) where Key.RawValue == String {
+    public init<Key: RawRepresentable>(
+        _ key: Key, defaultValue: Value,
+        storage: UserDefaults = .standard
+    ) where Key.RawValue == String {
         self.key = key.rawValue
         self.defaultValue = defaultValue
         self.storage = storage

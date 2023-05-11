@@ -1,3 +1,5 @@
+// swiftlint:disable large_tuple line_length
+
 import SwiftUI
 
 /// Generic extension to apply conditional transforms.
@@ -200,3 +202,5 @@ extension View {
         }
     }
 }
+
+// swiftlint:enable large_tuple line_length

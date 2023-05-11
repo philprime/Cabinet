@@ -83,3 +83,5 @@ precedencegroup MultiAssignmentOperatorPrecedenceGroup {
     lowerThan: CastingPrecedence
 
 }
+
+// swiftlint:enable static_operator
