@@ -18,6 +18,7 @@ let package = Package(
             "CabinetPropertyWrappers",
             "CabinetFoundation"
         ]),
+        .library(name: "CabinetCore", targets: ["CabinetCore"]),
         .library(name: "CabinetCollections", targets: ["CabinetCollections"]),
         .library(name: "CabinetCrypto", targets: ["CabinetCrypto"]),
         .library(name: "CabinetPartialTypes", targets: ["CabinetPartialTypes"]),
