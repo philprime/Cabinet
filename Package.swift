@@ -28,7 +28,7 @@ let package = Package(
         .library(name: "CabinetFoundation", targets: ["CabinetFoundation"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/philprime/Flow", .upToNextMajor(from: "1.0.2")),
+        .package(url: "https://github.com/philprime/Flow", .upToNextMajor(from: "1.1.1")),
         //dev .package(url: "https://github.com/nalexn/ViewInspector", .upToNextMajor(from: "0.9.6"))
     ],
     targets: [
