@@ -14,6 +14,7 @@ concurrency:
 
 jobs:
   deploy_docs:
+    name: Documentation
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v5
@@ -38,6 +39,7 @@ jobs:
           cd docs
           touch .nojekyll
       - name: Commit files
+        if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
         run: |
           cd docs
           git init
@@ -46,6 +48,7 @@ jobs:
           git add .
           git commit -m "Deploying Updated Jazzy Docs"
       - name: Push changes
+        if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
         uses: ad-m/github-push-action@master
         with:
           directory: docs
