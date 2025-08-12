@@ -12,8 +12,8 @@ concurrency:
 
 jobs:
   run-macos:
+    name: Test
     runs-on: macos-15
-
     steps:
       - uses: actions/checkout@v5
         with:
@@ -40,6 +40,7 @@ jobs:
             -G info.lcov
 
   swiftlint:
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
